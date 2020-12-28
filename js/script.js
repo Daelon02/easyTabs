@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     'use strict';
     let tab = document.querySelectorAll('.info-header-tab'),
-        info = document.querySelector('.info-header'),
+        info = document.querySelectorAll('.info-header'),
         tabContent = document.querySelectorAll('.info-tabcontent');
 
     function hideTabContent(a) {
@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    info.forEach.call(info,function(el){
         el.addEventListener('click', function(event) {
             let target = event.target;
             if (target && target.classList.contains('info-header-tab')) {
@@ -32,5 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             }
-        });
+        })
+    });
 });
